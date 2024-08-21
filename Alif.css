@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Quicksand', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body { 
+    margin-top: 51px;
+    background-color: transparent;
+    background-size: cover;
+    color: #081629 ;
+}
+
+hr {
+    border: 1.5px solid black;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 100;
+    backdrop-filter: blur(3px); /* Blur effect */
+    background-color: rgba(255, 255, 255, 0.8); /* Set background to semi-transparent */
+}
+
+.logo img {
+    width: 80px;
+    background: transparent;
+}
+
+.navbar {
+    list-style-type: none;
+    display: flex;
+    background: transparent;
+}
+
+.navbar a {
+    font-size: 20px;
+    color: #081629;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .5s;
+}
+
+.navbar a:hover {
+    color: rgb(166, 94, 21);
+    transition: .3s;
+}
+
+/* Menu Toggle Button for Smaller Screens */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #081629;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        position: fixed;
+        top: 60px; /* Adjust based on header height */
+        right: -100%;
+        width: 200px;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.9);
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+    }
+
+    .navbar a {
+        margin: 20px 0;
+        font-size: 24px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+}
+
+
+.main-page {
+    padding: 60px 5%;
+    background: azure;
+    margin-top: -53px;
+    margin-bottom: -4px;
+}
+
+.mydescription p {
+    font-size: 40px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.mydescription .occupation {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: darkblue;  
+    color: aqua;
+    font-size: 20px;
+    font-weight: 900;
+    transition: .3s;
+}
+
+.mydescription p:hover {
+    justify-content: space-between;
+    font-size: 60px;
+    transition: .5s;
+    letter-spacing: 5px;
+}
+
+.mydescription .occupation:hover {
+    padding-left: 5px;
+    font-size: 40px;
+    transition: .5s;
+    letter-spacing: 2.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-page {
+        padding: 30px 5%;
+    }
+
+    .mydescription p {
+        font-size: 30px;
+    }
+
+    .mydescription .occupation {
+        font-size: 16px;
+    }
+
+    .mydescription p:hover {
+        font-size: 40px;
+        letter-spacing: 3px;
+    }
+
+    .mydescription .occupation:hover {
+        font-size: 30px;
+    }
+
+    div[style*="display: flex;"] {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    img[style*="max-width: 300px;"] {
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-width: 80%;
+    }
+}
+
+
+/* Main styling for the section */
+.f1 {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the content horizontally */
+    padding: 20px;
+    gap: 20px; /* Adds space between the image and text */
+}
+
+/* Image styling */
+.f1 img {
+    max-width: 100%; /* Ensures the image stays within the container */
+    height: auto;
+    border: 2px solid #081629;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgb(179, 179, 179);
+    object-fit: cover; /* Ensures the image scales correctly */
+    transition: all .5s ease;
+}
+
+/* Text styling */
+.intro p {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+    color: black;
+    max-width: 50%; /* Limits the text block to 50% of the container width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .f1 {
+        flex-direction: column; /* Stacks the image and text vertically */
+        align-items: center; /* Centers items horizontally */
+        gap: 20px; /* Adds space between the stacked elements */
+    }
+
+    .f1 img,
+    .intro p {
+        max-width: 100%; /* Ensures both the image and text take up full width */
+    }
+
+    .intro p {
+        font-size: 1.5rem; /* Adjusts font size for smaller screens */
+        text-align: center; /* Centers the text */
+    }
+}
+
+/* Projects grid styling */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Project card styling */
+.project-card {
+    border: 2px solid #081629;
+    border-radius: 5px;
+    overflow: hidden; /* Prevents content overflow */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform .3s ease;
+}
+
+.project-card img {
+    border: #081629 solid 24px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Project card hover effect */
+.project-card h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #081629;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.project-card a:hover {
+    background-color: #c7a076;
+}
+
+/* About Section */
+#about {
+    padding: 30px;
+}
+
+#about p {
+    padding-bottom: 10px;
+}
+
+.hide {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity .5s ease, transform .5s ease;
+    display: none;
+    margin-top: 5px;
+}
+
+.myskills {
+    font-size: 30px;
+    text-align: right;
+    position: relative;
+    cursor: pointer;
+}
+
+.myskills .skills {
+    transition: font-size .5s ease, color .5s ease;
+}
+
+.myskills:hover .hide {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.myskills:hover .skills {
+    font-size: 40px;
+    color: #7f7f7f;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress {
+    width: 30%; /* Adjust this value to represent skill level */
+    height: 100%;
+    background-color: rgb(199, 160, 118);
+    border-radius: 5px;
+}
+
+/* Projects Section */
+#projects {
+    padding: 20px;
+}
+
+.project-card {
+    background: #ededed;
+    padding: 20px;
+    border: 2px solid #081629;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #ff8e23;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.project-card a:hover {
+    color: #081629;
+}
+
+/* Contact Section */
+.bard {
+    background-color: #ededed;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin: 30px;
+    padding: 50px;
+    padding-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 2px solid #081629;
+    border-radius: 5px;
+    width: 100%;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff8e23;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+form button:hover {
+    background-color: #081629;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    height: 5em;
+    background: #ff8e23;
+    margin-top: 5em;
+    padding: 4em;
+    border-top: #cf721c solid 2em;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.25em;
+}
